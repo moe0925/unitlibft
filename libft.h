@@ -32,6 +32,8 @@ int 	ft_isprint(int c);
 void			*ft_memset(void *b, int c, size_t len );
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 void 			*ft_memcpy(void *buf1, const void *buf2, size_t n);
+int	            ft_strncmp(const char *s1, const char *s2, size_t n);
+
 
 //------------------------------------------------
 #endif

@@ -1,17 +1,17 @@
 #include "libft.h"
 
-void *ft_memmove(void *buf1, const void *buf2, size_t n)
+void *ft_memmove(void *dst, const void *src, size_t len)
 {
 	char *str;
-	char *src;
-	str = (char *)buf1;
-	src = (char *)buf2;
+	char *src2;
+	str = (char *)dst;
+	src2 = (char *)src;
 	int	i;
 
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{	
-		str[i] = src[i];
+		str[i] = src2[i];
 		i++;
 	}
 	return (str);
