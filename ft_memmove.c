@@ -2,12 +2,12 @@
 
 void *ft_memmove(void *dst, const void *src, size_t len)
 {
-	char *str;
-	char *src2;
+	unsigned char *str;
+	unsigned char *src2;
 	int str_num;
-	str = (char *)dst;
+	str = (unsigned char *)dst;
 	str_num = (int )dst;
-	src2 = (char *)src;
+	src2 = (unsigned char *)src;
 	int	i;
 
 	if (src <= dst /* && src + len <= dst +len */)

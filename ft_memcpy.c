@@ -2,10 +2,10 @@
 
 void *ft_memcpy(void *buf1, const void *buf2, size_t n)
 {
-	char *str;
-	char *src;
-	str = (char *)buf1;
-	src = (char *)buf2;
+	unsigned char *str;
+	unsigned char *src;
+	str = (unsigned char *)buf1;
+	src = (unsigned char *)buf2;
 	int	i;
 
 	i = 0;
