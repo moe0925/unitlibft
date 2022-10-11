@@ -6,17 +6,31 @@ void *ft_calloc(size_t count, size_t size)
 	int i;
 
 	i = 0;
-	p = malloc(sizeof * count  );
+	p = malloc(size()count * size);
 	if (p == NULL)
 		return (NULL);
-	while (i < size)
-	{
-    	p[i] = 0;
-	}
+	ft_bzero(p,count * size);
 	/* ft_memset(p,'\0', size) */
 
 	return(p);
 }
+
+void ft_bzero(void *s, size_t n)
+{
+	char *str;
+	str = (char *)s ;
+
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{	
+		str[i] = '\0';
+		i++;
+	}
+	return ;
+}
+
 
 #include <stdio.h>
 #include <stdlib.h>

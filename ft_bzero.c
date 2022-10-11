@@ -12,9 +12,14 @@ void ft_bzero(void *s, size_t n)
 		str[i] = '\0';
 		i++;
 	}
-	 
-
-	return ;
+	printf("%s",&str[0]);
+	printf("%s",&str[1]);
+	printf("%s",&str[2]);
+	printf("%s",&str[3]);
+	printf("%s",&str[4]);
+	printf("%s",&str[5]);
+	printf("%s",&str[6]);
+	return;
 }
 
 int main ()
@@ -22,6 +27,8 @@ int main ()
 	unsigned int len;
 
 	char c1[] = "abcde";
-	len = 3;
-    bzero(c1,len);
+	len = 1;
+    ft_bzero(c1,len);
+	bzero(c1,len);
+
 }
