@@ -1,33 +1,54 @@
-cc = gcc
+CFLAGS = -Wall -Wextra -Werror
 
-CFLAGS = -Wall -Wextra -Werror -I./includes
+CC = gcc
 
-TARGET = LIBFT
+NAME = libft.a
 
-# (4)コンパイル対象のソースコード
-SRCS    = ./srcs/ft_atoi.c ./srcs/ft_bzero.c ./srcs/ft_calloc.c ./srcs/ft_isalnum.c ./srcs/ft_isascii.c ./srcs/ft_isprint.c ./srcs/ft_strlen.c ./srcs/ft_memset.c ./srcs/ft_bzero.c ./srcs/ft_memcpy.c ./srcs/ft_memmove.c ./srcs/ft_strlcpy.c ./srcs/ft_strlcat.c ./srcs/ft_toupper.c ./srcs/ft_tolower.c 
-# (5)オブジェクトファイル名
-OBJS    = $(SRCS:.cpp=.o)
- 
-# (6)インクルードファイルのあるディレクトリパス
-INCDIR  = -I../inc
- 
-# # (7)ライブラリファイルのあるディレクトリパス
-# LIBDIR  = 
- 
-# # (8)追加するライブラリファイル
-# LIBS    = 
+OBJS = ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o  ft_strlen.o ft_memset.o
 
-# (9)ターゲットファイル生成
-$(TARGET): $(OBJS)
-	$(CC) -o $@ $^ $(LIBDIR) $(LIBS)
-	
-# (10)オブジェクトファイル生成
-$(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) $(INCDIR) -c $(SRCS)
+all: $(NAME)
 
-# (11)"make all"で make cleanとmakeを同時に実施。
-all: clean $(OBJS) $(TARGET)
-# (12).oファイル、実行ファイル、.dファイルを削除
+$(NAME): $(OBJS)
+	$(AR) cr $@ $^
+
 clean:
-	-rm -f $(OBJS) $(TARGET) *.d
+	-$(RM) $(OBJS) $(BONUSOBJS)
+
+fclean: clean
+	-$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: clean fclean re
+
+
+
+
+
+# NAME =	libft.a
+# SRCS = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c  
+# # OBJS = ${SRCS:%.c=%.o}
+# OBJS = ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o
+# # SRCDIR = ./srcs
+# HEDDIR = ./includes
+
+# INCDIR  = -I../inc
+ 
+# CC = gcc
+# CFLAGS = -Wall -Wextra -Werror
+# RM = rm -f
+# all: ${NAME}
+	
+# $(NAME): $(OBJS)
+# 	ar r$(NAME) $^
+
+# clean:
+# 	$(RM) $(OBJS)
+
+# fclean: clean
+# 	$(RM) $(NAME) $(OBJS)
+
+# re:    fclean all
+
+# .PHONY :
+# 	all clean fclean re 
