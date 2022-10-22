@@ -1,6 +1,6 @@
 #include "libft.h" 
-int		ft_strlen(char *str);
 char	*ft_strcpy(char *dest, char *src);
+size_t	t_strlen(const char *s);
 
 char	*ft_strdup(const char *src)
 {
@@ -16,17 +16,7 @@ char	*ft_strdup(const char *src)
 	return (p);
 }
 
-int	ft_strlen(char *str)
-{
-	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_strcpy(char *dest, char *src)
 {
@@ -42,10 +32,10 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-#include <stdio.h>
-int main()
-{
-	char str1[] = "abcde"; 
-	printf("%s\n",ft_strdup(str1));
-	return (0);
-}
+// #include <stdio.h>
+// int main()
+// {
+// 	char str1[] = "abcde"; 
+// 	printf("%s\n",ft_strdup(str1));
+// 	return (0);
+// }

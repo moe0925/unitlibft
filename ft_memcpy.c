@@ -6,27 +6,65 @@ void *ft_memcpy(void *buf1, const void *buf2, size_t n)
 	unsigned char *src;
 	str = (unsigned char *)buf1;
 	src = (unsigned char *)buf2;
-	int	i;
+	size_t	i;
+	if (n == 0)
+		return(str);
+	
+	if (src[0] == '\0')
+	{
+		i = n - 1;
+		while (i >= 1)
+		{	
+			str[i] = str[i - 1];
+			--i;
+		}
+		str[0] = 0;
+		return(str);
+	}
 
 	i = 0;
 	while (i < n)
 	{	
+		
 		str[i] = src[i];
 		i++;
 	}
 	return (str);
 }
 
-int main ()
-{
-	unsigned int len;
+// int main ()
+// {
+// 	unsigned int len;
 
-	char c1[] = "abcde";
-	char c2[] = "ABCDE";
-	len = 6;
-    ft_memcpy(c1,c2,len);
-	printf("%s",(char*)ft_memcpy(c1,c2,len));
-}
+// 	char c1[] = "123";
+// 	char cc1[] = "123";
+// 	char c2[] = "";
+// 	char cc2[] = "";
+// 	len = 3;
+// 	int i;
+//     char *str = memcpy(c1,c2,len);
+// 	i = 0;
+// 	while (i < 3)
+// 	{
+// 	 	printf("%d\n",str[i]);
+// 		i++;
+// 	}
+// 	printf("ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー\n");
+
+// 	i = 0;
+// 	char *str2 = ft_memcpy(cc1,cc2,len);
+// 	while (i < 3)
+// 	{
+// 		printf("%d\n",str2[i]);
+// 		i++;
+// 	}
+// 	printf("ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー\n");
+
+// 	memcpy(c1,c2,len);
+// 	printf("%s\n",(char*)ft_memcpy(c1,c2,len));
+// 	printf("%s\n",(char*)memcpy(cc1,cc2,len));
+	
+// }
 
 
 // #include "libft.h"

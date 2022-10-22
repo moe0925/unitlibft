@@ -20,12 +20,12 @@ char *ft_substr(char const *s, unsigned int start,size_t len)
 }
 
 
-int main()
-{
-	char *str = "HELLO AGAIN";
-	int start1 = 6;
-	int len1 = 5;
-	ft_substr(str,start1,len1);
-	printf("%s",ft_substr(str,start1,len1));
-	return 0;
-}
+// int main()
+// {
+// 	char *str = "HELLO AGAIN";
+// 	int start1 = 6;
+// 	int len1 = 5;
+// 	ft_substr(str,start1,len1);
+// 	printf("%s",ft_substr(str,start1,len1));
+// 	return 0;
+// }
